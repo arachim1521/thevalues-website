@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Arachim America | The Values</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #26232a;
+      background: #fbf8f2;
+      line-height: 1.6;
+    }
+
+    :root {
+      --burgundy: #48172b;
+      --dark-burgundy: #30101d;
+      --gold: #a38b48;
+      --cream: #fbf8f2;
+      --white: #ffffff;
+      --gray: #6e6870;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      padding: 24px 0;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 11px;
+      font-weight: normal;
+      letter-spacing: 4px;
+      color: #ddce9b;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .gold-button {
+      background: var(--gold);
+      color: white !important;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 80% 30%,
+          rgba(163, 139, 72, 0.3),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          var(--dark-burgundy),
+          var(--burgundy)
+        );
+
+      color: white;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 550px;
+      height: 550px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+      right: -170px;
+      top: 100px;
+
+      box-shadow:
+        0 0 0 80px rgba(255,255,255,.025),
+        0 0 0 160px rgba(255,255,255,.018);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      padding-top: 80px;
+    }
+
+    .small-heading {
+      color: #ddce9b;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(48px, 7vw, 86px);
+      line-height: 1.05;
+      font-weight: normal;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 20px;
+      color: rgba(255,255,255,.83);
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .outline-button {
+      border: 1px solid rgba(255,255,255,.7);
+      color: white;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 50px;
+    }
+
+    .section-title .label {
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--dark-burgundy);
+      font-weight: normal;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.15;
+      margin: 14px 0 17px;
+    }
+
+    .section-title p {
+      color: var(--gray);
+      font-size: 18px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .about-picture {
+      min-height: 430px;
+      border-radius: 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+
+      background:
+        linear-gradient(
+          150deg,
+          rgba(72,23,43,.06),
+          rgba(163,139,72,.20)
+        );
+
+      border: 1px solid #e7ded0;
+    }
+
+    .about-picture div {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 43px;
+      color: var(--burgundy);
+      line-height: 1.2;
+    }
+
+    .about-picture small {
+      display: block;
+      margin-top: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+
+    .about-text .label {
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    .about-text p {
+      color: var(--gray);
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    /* PROGRAMS */
+
+    .programs {
+      background: white;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--cream);
+      border: 1px solid #e7ded0;
+      border-radius: 22px;
+      padding: 35px;
+      min-height: 280px;
+    }
+
+    .card-number {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      color: var(--gold);
+    }
+
+    .card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--burgundy);
+      font-weight: normal;
+      font-size: 27px;
+      margin: 25px 0 10px;
+    }
+
+    .card p {
+      color: var(--gray);
+    }
+
+    /* MESSAGE */
+
+    .message {
+      background: var(--burgundy);
+      color: white;
+      text-align: center;
+    }
+
+    .message blockquote {
+      max-width: 900px;
+      margin: auto;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.35;
+    }
+
+    .message .credit {
+      color: #ddce9b;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-top: 22px;
+    }
+
+    /* DONATE */
+
+    .donate {
+      text-align: center;
+    }
+
+    .donate-box {
+      background: white;
+      border: 1px solid #e7ded0;
+      border-radius: 30px;
+      padding: 65px 30px;
+      box-shadow: 0 25px 60px rgba(60,30,40,.08);
+    }
+
+    .donate-box .label {
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    .donate-box p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      font-size: 18px;
+      color: var(--gray);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--dark-burgundy);
+      color: rgba(255,255,255,.7);
+      padding: 45px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .footer-logo {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links a:not(.gold-button) {
+        display: none;
+      }
+
+      .hero {
+        min-height: 640px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .footer-content {
+        display: block;
+        text-align: center;
+      }
+
+      .footer-content div + div {
+        margin-top: 15px;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .container {
+        width: calc(100% - 28px);
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .hero-buttons .button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+
+      <div class="logo">
+        ARACHIM
+        <span>AMERICA</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#programs">What We Do</a>
+        <a href="#contact">Contact</a>
+        <a href="#donate" class="button gold-button">Donate</a>
+      </div>
+
+    </nav>
+  </div>
+</header>
+
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <div class="small-heading">
+        Arachim America
+      </div>
+
+      <h1>
+        Pointing to the<br>
+        direction of home.
+      </h1>
+
+      <p>
+        Strengthening Jewish homes, families and values through
+        meaningful education, inspiration and connection.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#about" class="button gold-button">
+          Discover Arachim
+        </a>
+
+        <a href="#donate" class="button outline-button">
+          Support Our Work
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="about-grid">
+
+      <div class="about-picture">
+
+        <div>
+          Values that guide.<br>
+          Homes that endure.
+
+          <small>Arachim America</small>
+        </div>
+
+      </div>
+
+
+      <div class="about-text">
+
+        <div class="label">
+          Who We Are
+        </div>
+
+        <h2>
+          Building stronger Jewish families.
+        </h2>
+
+        <p>
+          Arachim reaches individuals and families with meaningful
+          programs designed to deepen Jewish identity, strengthen
+          relationships and bring timeless values into everyday life.
+        </p>
+
+        <p>
+          Through education, inspiration and personal connection,
+          Arachim helps people discover the beauty and strength of
+          Jewish life.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="programs" id="programs">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <div class="label">
+        Our Mission
+      </div>
+
+      <h2>
+        Connecting people to what matters most.
+      </h2>
+
+      <p>
+        Creating meaningful opportunities for Jewish families
+        to learn, connect and grow.
+      </p>
+
+    </div>
+
+
+    <div class="cards">
+
+      <div class="card">
+
+        <div class="card-number">
+          01
+        </div>
+
+        <h3>
+          Inspiration
+        </h3>
+
+        <p>
+          Experiences and programs that make Jewish values
+          meaningful, relevant and lasting.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-number">
+          02
+        </div>
+
+        <h3>
+          Family
+        </h3>
+
+        <p>
+          Guidance and education focused on strengthening
+          Jewish homes, marriages and relationships.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-number">
+          03
+        </div>
+
+        <h3>
+          Connection
+        </h3>
+
+        <p>
+          Opportunities to learn, connect and grow within
+          a warm and welcoming Jewish environment.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="message">
+
+  <div class="container">
+
+    <blockquote>
+      “A strong home begins with strong values.”
+    </blockquote>
+
+    <div class="credit">
+      Arachim America
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="donate" id="donate">
+
+  <div class="container">
+
+    <div class="donate-box">
+
+      <div class="label">
+        Make An Impact
+      </div>
+
+      <h2>
+        Help us strengthen another home.
+      </h2>
+
+      <p>
+        Your support helps Arachim bring meaningful Jewish education,
+        inspiration and family-strengthening programs to more people.
+      </p>
+
+      <a href="#" class="button gold-button">
+        Donate to Arachim
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer id="contact">
+
+  <div class="container">
+
+    <div class="footer-content">
+
+      <div>
+        <div class="footer-logo">
+          Arachim America
+        </div>
+
+        Pointing to the direction of home.
+      </div>
+
+      <div>
+        thevalues.org
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
