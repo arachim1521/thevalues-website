@@ -1100,6 +1100,134 @@ header.scrolled .logo.logo-brand{
   }
 }
 
+
+/* HERO — wide live headline with cutout layered behind it */
+.hero{
+  min-height:790px;
+}
+
+.hero-content{
+  width:min(1180px,calc(100% - 44px));
+  max-width:1180px;
+  margin:0 auto;
+  padding-right:0;
+  position:relative;
+  z-index:3;
+}
+
+.hero h1{
+  width:min(820px,72vw);
+  max-width:820px;
+  font-size:clamp(68px,6.2vw,100px);
+  line-height:.96;
+  margin:18px 0 28px;
+  position:relative;
+  z-index:4;
+}
+
+.hero-content > p,
+.hero-actions,
+.hero-content .kicker{
+  position:relative;
+  z-index:4;
+}
+
+.hero-content > p{
+  max-width:640px;
+}
+
+.hero-cutout{
+  position:absolute;
+  width:min(52vw,740px);
+  right:max(8px,calc((100vw - 1180px)/2 - 55px));
+  bottom:108px;
+  z-index:2;
+  opacity:.96;
+  pointer-events:none;
+  filter:drop-shadow(0 28px 60px rgba(0,0,0,.32));
+  transform:none;
+}
+
+.hero-cutout img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* Let the people visually move behind the right half of the headline */
+@media (min-width:981px){
+  .hero h1{
+    padding-right:0;
+  }
+}
+
+@media (max-width:1180px){
+  .hero-content{
+    width:calc(100% - 44px);
+    padding-right:0;
+  }
+
+  .hero h1{
+    width:min(760px,70vw);
+    max-width:760px;
+    font-size:clamp(64px,6.4vw,92px);
+  }
+
+  .hero-cutout{
+    width:min(54vw,680px);
+    right:-10px;
+    bottom:108px;
+  }
+}
+
+@media (max-width:980px){
+  .hero{
+    min-height:900px;
+  }
+
+  .hero-content{
+    width:calc(100% - 32px);
+    padding-right:0;
+    padding-bottom:310px;
+  }
+
+  .hero h1{
+    width:100%;
+    max-width:720px;
+    font-size:clamp(56px,10vw,82px);
+  }
+
+  .hero-cutout{
+    width:min(90vw,620px);
+    right:-5vw;
+    bottom:104px;
+    opacity:.40;
+    transform:none;
+  }
+}
+
+@media (max-width:640px){
+  .hero{
+    min-height:860px;
+  }
+
+  .hero h1{
+    font-size:54px;
+    line-height:.98;
+  }
+
+  .hero-content{
+    padding-bottom:280px;
+  }
+
+  .hero-cutout{
+    width:105vw;
+    right:-23vw;
+    bottom:104px;
+    opacity:.28;
+  }
+}
+
 </style>
 </head>
 <body>
