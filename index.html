@@ -1242,6 +1242,39 @@ header.scrolled .logo.logo-brand{
   }
 }
 
+
+/* Keep ALL hero text above the cutout image */
+.hero-content{
+  position:relative;
+  z-index:6 !important;
+}
+
+.hero-content .kicker,
+.hero-content h1,
+.hero-content p,
+.hero-content .hero-actions{
+  position:relative;
+  z-index:7 !important;
+}
+
+/* People stay behind all wording */
+.hero-cutout{
+  z-index:2 !important;
+}
+
+/* Critical fix: metrics bar and its wording must sit on top of the pants */
+.top-metrics{
+  z-index:8 !important;
+}
+
+.top-metrics .metrics,
+.top-metrics .metric,
+.top-metrics .metric strong,
+.top-metrics .metric span{
+  position:relative;
+  z-index:9;
+}
+
 </style>
 </head>
 <body>
