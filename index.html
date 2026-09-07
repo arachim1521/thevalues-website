@@ -111,7 +111,6 @@ section{padding:150px 0}
 /* impact chain — flowing progression */
 .chain-flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0;margin-top:60px}
 .chain-step{text-align:center;padding:0 26px}
-.chain-step .n{display:block;font-family:'DM Serif Display',Georgia,serif;font-size:14px;color:var(--gold-soft);margin-bottom:8px;letter-spacing:.05em}
 .chain-step strong{font-size:16px;font-weight:700;color:#fff}
 .chain-arrow{color:var(--gold-soft);opacity:.55;font-size:20px;padding:0 4px}
 @media (max-width:760px){.chain-arrow{display:none}.chain-flow{flex-direction:column;gap:22px}}
@@ -333,13 +332,13 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.5);padding:36px 0}
     <h2 class="headline big col">Some of them haven't been born yet.</h2>
 
     <div class="chain-flow">
-      <div class="chain-step"><span class="n">01</span><strong>One Jew</strong></div>
+      <div class="chain-step"><strong>One Jew</strong></div>
       <div class="chain-arrow">&rarr;</div>
-      <div class="chain-step"><span class="n">02</span><strong>A Jewish marriage</strong></div>
+      <div class="chain-step"><strong>A Jewish marriage</strong></div>
       <div class="chain-arrow">&rarr;</div>
-      <div class="chain-step"><span class="n">03</span><strong>A Torah home</strong></div>
+      <div class="chain-step"><strong>A Torah home</strong></div>
       <div class="chain-arrow">&rarr;</div>
-      <div class="chain-step"><span class="n">04</span><strong>Their children</strong></div>
+      <div class="chain-step"><strong>Their children</strong></div>
     </div>
 
     <div class="photo-pair">
@@ -591,9 +590,6 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.5);padding:36px 0}
           <div><span class="contact-label">Office</span><div class="contact-value">5014 16th Ave, Brooklyn, NY 11204</div></div>
         </div>
       </div>
-      <div class="center">
-        <p style="font-size:12px;color:var(--muted)">Rosh Hashanah 5787 Campaign</p>
-      </div>
     </div>
   </div>
 </section>
@@ -621,6 +617,15 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.5);padding:36px 0}
   };
   window.addEventListener('scroll', update, { passive: true });
   update();
+
+  const contactLink = document.querySelector('a[href="#contact"]');
+  const contactSection = document.getElementById('contact');
+  if (contactLink && contactSection) {
+    contactLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
