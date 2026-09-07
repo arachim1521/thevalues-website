@@ -23,8 +23,8 @@
 }
 *{box-sizing:border-box}
 html{overflow-x:hidden}
-body{margin:0;font-family:'Manrope',Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.5;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
-main{flex:1 0 auto;display:flex}
+body{margin:0;font-family:'Manrope',Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.5;overflow-x:hidden}
+main{display:flex}
 main .contact-shell{flex:1}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
@@ -50,21 +50,22 @@ header .navlinks a:not(.btn):hover::after{width:100%}
 /* split-screen compact layout */
 .contact-shell{display:grid;grid-template-columns:1fr 1fr}
 .panel{padding:0 min(6vw,64px)}
-.panel-navy{background:radial-gradient(ellipse at 20% 15%,rgba(184,146,63,.14),transparent 45%),linear-gradient(165deg,var(--navy-deep),#181b38);color:#fff;padding-top:118px;padding-bottom:44px;display:flex;flex-direction:column}
+.panel-navy{background:radial-gradient(ellipse at 20% 15%,rgba(184,146,63,.14),transparent 45%),linear-gradient(165deg,var(--navy-deep),#181b38);color:#fff;padding-top:130px;padding-bottom:80px;display:flex;flex-direction:column;justify-content:center}
 .panel-navy h1{font-size:clamp(30px,3vw,44px);line-height:1.14;max-width:460px}
 .panel-navy p.lede{font-size:15.5px;line-height:1.7;color:rgba(255,255,255,.68);margin-top:20px;max-width:400px}
-.org-block{margin-top:auto;padding-top:28px;border-top:1px solid rgba(255,255,255,.14)}
+.org-block{margin-top:38px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14)}
 .org-name{font-weight:800;font-size:14px;color:#fff}
-.org-ein{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:5px}
+.org-ein{font-size:14.5px;color:var(--gold-soft);margin-top:6px;font-weight:600;letter-spacing:.01em}
 
-.panel-cream{background:var(--cream);padding-top:118px;padding-bottom:44px;display:flex;flex-direction:column;justify-content:center}
+.panel-cream{background:var(--cream);padding-top:130px;padding-bottom:80px;display:flex;flex-direction:column;justify-content:center}
 .info-item{padding:22px 0;border-top:1px solid var(--line);display:flex;align-items:center;gap:20px}
 .info-item:last-of-type{border-bottom:1px solid var(--line)}
 .info-icon{width:44px;height:44px;border-radius:50%;background:rgba(184,146,63,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .info-icon svg{width:19px;height:19px;stroke:var(--gold)}
 .info-label{display:block;text-transform:uppercase;letter-spacing:.12em;font-size:10px;font-weight:800;color:var(--muted);margin-bottom:5px}
 .info-value{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(19px,1.6vw,23px);color:var(--ink);line-height:1.3}
-.info-value a:hover{color:var(--gold)}
+.info-value a{transition:color .2s ease}
+.info-value a:hover{color:var(--gold);text-decoration:underline}
 .cta-row{margin-top:32px}
 
 @media (max-width:900px){
@@ -124,7 +125,7 @@ footer .wrap{width:min(1320px,90vw);margin:0 auto}
     </div>
     <div class="info-item">
       <div class="info-icon"><svg fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11z"></path><circle cx="12" cy="10" r="2.2"></circle></svg></div>
-      <div><span class="info-label">Office</span><div class="info-value" style="font-size:clamp(16px,1.3vw,19px)">5014 16th Ave, Brooklyn, NY 11204</div></div>
+      <div><span class="info-label">Office</span><div class="info-value" style="font-size:clamp(16px,1.3vw,19px)"><a href="https://www.google.com/maps/search/?api=1&query=5014+16th+Ave%2C+Brooklyn%2C+NY+11204" target="_blank" rel="noopener noreferrer">5014 16th Ave, Brooklyn, NY 11204</a></div></div>
     </div>
   </div>
 
