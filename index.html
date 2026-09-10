@@ -221,7 +221,9 @@ section{padding:150px 0}
 .shofar-cta .wrap{position:relative;z-index:2}
 .shofar-decor{position:absolute;inset:0;z-index:1;pointer-events:none}
 .shofar-decor img{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:88%;object-fit:contain;opacity:.42;filter:drop-shadow(0 30px 50px rgba(0,0,0,.45));-webkit-mask-image:radial-gradient(ellipse 62% 60% at 50% 50%,#000 60%,transparent 92%);mask-image:radial-gradient(ellipse 62% 60% at 50% 50%,#000 60%,transparent 92%)}
-@media (max-width:760px){.shofar-decor{display:none}}
+@media (max-width:760px){
+  .shofar-decor img{width:100%;height:68%;transform:translate(-50%,-50%) rotate(100deg);opacity:.4;-webkit-mask-image:none;mask-image:none}
+}
 
 /* contact */
 
@@ -522,7 +524,10 @@ END ARCHIVED SECTION -->
 
 <section class="section-dark reveal shofar-cta">
   <div class="shofar-decor" aria-hidden="true">
-    <img src="/assets/shofar.png" alt="">
+    <picture>
+      <source media="(max-width:760px)" srcset="/assets/shofar-mobile.png">
+      <img src="/assets/shofar.png" alt="">
+    </picture>
   </div>
   <div class="wrap center">
     <h2 class="headline big col">Next year, how many<br>more will hear the shofar?</h2>
